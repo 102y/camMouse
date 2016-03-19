@@ -1,7 +1,7 @@
 # camMouse
-This repository contains the source code for a camera mouse: a head-controlled mouse. The project is implemented in MATLAB.
+This repository contains the source code for a camera mouse: a head-controlled mouse. The project is implemented in MATLAB. Click [here](https://www.youtube.com/watch?v=UI1_e2heyuQ&feature=youtu.be) to see a demonstration of the initial implementation of this project. 
 
-# References
+# Related Work
 * [Camera Mouse Research](http://cameramouse.bu.edu/)
 * [Camera Mouse Commercial](http://cameramouse.org/)
 * Kjeldsen, Rick. "[Improvements in vision-based pointer control.](https://courses.cs.washington.edu/courses/cse590w/06au/resources/p189-kjeldsen.pdf)" Proceedings of the 8th international ACM SIGACCESS conference on Computers and accessibility. ACM, 2006.
