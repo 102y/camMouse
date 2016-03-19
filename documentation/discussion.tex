@@ -1,0 +1,19 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\textbf{Feature-tracking} Before implementing minimum eigenvalue feature-extraction method, I had initialized the KLT tracker on a central portion of the detected face region by removing a length of 25 pixels from each side of the box. Hence, if the detected face region had a size of $H \times W$, the resulting size of the central patch was $(H-50) \times (W-50)$. All the pixels in this central region served as "feature-trackers" for the box. Although the tracking with such an approach was very robust, the performance was quite slow since the number of features to track were very large.
+
+\textbf{Limitations} The system implemented in this project carries limitations that generally come with a simple computer vision system.
+\begin{itemize}
+	\item Under \textbf{non-uniform lighting}, the majority of the features selected by the minimum eigenvalue algorithm are on the brighter side of the face. Hence, when the user moves their head sideways, a majority of the features are lost. 
+	\item The KLT tracker cannot handle \textbf{rapid head movements} of the head. Any rapid head movement or even a quick drastic change in the expression of the user's face can cause the loss of all tracking points.
+	\item Using the mean position of the feature-trackers to determine the head-position sometimes causes the mouse-pointer to "drift." This occurs when some of the tracking-features are lost during the head movements causing a small change in the mean position of the features.
+\end{itemize}
+
+\textbf{Future work.} Overall, the current implementation performs fairly well under uniform lighting and with regular, steady head movements. However, the current technical approaches cannot be deployed to a commercial implementation of such a system. Some ways in which the system can be improved:
+\begin{itemize}
+	\item \textbf{Improved feature selection}. Once the region of the face has been detected, instead of finding the corners using the minimum eigenvalue algorithm, the system could use a face landmark estimation algorithm that captures the key features on the face. Burgos-Artizzu et al. ~\cite{burgos2013robust} demonstrate a robust algorithm that does exactly this even under occlusion.
+	\item \textbf{Improved tracking}. The system could definitely use a more robust tracking algorithm for the purpose of tracking simple and steady head movements. Epstein et al. ~\cite{epstein2014using} propose the use of kernel-projections for their implementation of a camera mouse in which they track a user-specified patch on the face.
+\end{itemize}
+
+

@@ -1,0 +1,133 @@
+\documentclass[12pt]{article}
+\usepackage{fancyhdr}
+%\usepackage{hyperref}  -- compilation errors
+\usepackage[pdftex]{graphicx}
+\usepackage{amsfonts, amsmath, amssymb}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{graphicx, cite, color, setspace, url, verbatim, afterpage}
+\usepackage{stfloats}
+\usepackage{xspace}
+\usepackage{paralist}
+
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmicindent}{12pt}
+
+\usepackage{listings}
+
+\newcommand{\asminst}[1]{{\small\texttt{#1}}}
+\newcommand{\fnm}[1]{\footnotemark[#1]}
+\renewcommand{\algorithmicforall}{\textbf{for each}}
+
+\setlength{\marginparwidth}{0.75in}
+\newcommand{\MarginPar}[1]{\hspace{1sp}\marginpar{\tiny\sffamily\raggedright\hspace{1sp}{\color{red}#1}}}
+\newcommand{\mc}[2]{\multicolumn{#1}{|c|}{#2}}
+\newcommand{\mcf}[2]{\multicolumn{#1}{c|}{#2}}
+\newcommand{\mcff}[2]{\multicolumn{#1}{c||}{#2}}
+\newcommand{\mcb}[2]{\multicolumn{#1}{|c}{#2}}
+\newcommand{\mcn}[2]{\multicolumn{#1}{c}{#2}}
+\newcommand{\mcfd}[2]{\multicolumn{#1}{c||}{#2}}
+\newcommand{\mrw}[2]{\multirow{#1}{r}{#2}}
+\newcommand{\rb}[1]{\raisebox{1.5ex}[0pt]{#1}}
+\newcommand{\bp}[1]{{\mbox{\boldmath $#1$}}} % for boldface numbers in table
+\newcommand{\bpx}[1]{{{\color{red}\mbox{\boldmath $#1$}}}} % missing table stuff
+\newcommand{\blp}[1]{#1} % maybe blue is not working
+\newcommand{\fix}[1]{\textcolor{red}{\bf #1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\figref}[1]{Figure~\ref{#1}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\renewcommand\labelenumi{(\theenumi)}
+
+\newcommand{\ignore}[1]{}
+
+\def\naive{na\"\i ve}
+\def\naively{na\"\i vely}
+\def\ie{{\it i.e.}}
+\def\eg{{\it e.g.}}
+
+\newcommand{\bigO}[1]{\ensuremath{\mathcal{O}\hspace{-.2em}\left({#1}\right)}}
+
+\renewcommand{\labelitemi}{$\bullet$}
+
+\begin{document}
+
+\begin{titlepage}
+
+\center % Center everything on the page
+
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE University of California, Irvine}\\[1.5cm] % Name of your university/college
+\textsc{\Large CS 216}\\[0.5cm] % Major heading such as course name
+\textsc{\large Image Understanding}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Camera Mouse}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.4\textwidth}
+	\begin{flushleft} \large
+		\emph{Author:}\\
+		Rohit \textsc{Zambre} % Your name
+	\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+	\begin{flushright} \large
+		\emph{Professor:} \\
+		Dr. Charless \textsc{Fowlkes} % Supervisor's Name
+	\end{flushright}
+\end{minipage}\\[2cm]
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+
+%----------------------------------------------------------------------------------------
+%	DATE SECTION
+%----------------------------------------------------------------------------------------
+
+{\large \today}\\[2cm] % Date, change the \today to a set date if you want to be precise
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics[width=0.35\textwidth]{pics/logo.jpg}
+
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+%=========================================================================
+
+\input{summary}
+\input{techapp}
+\input{results}
+\input{discussion}
+
+%=========================================================================
+\bibliographystyle{abbrv}
+\small
+\bibliography{main}
+%=========================================================================
+\normalsize
+%\input{appendix}
+%=========================================================================
+\end{document}
